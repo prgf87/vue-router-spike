@@ -4,6 +4,7 @@ import About from "@/views/About.vue";
 import Jobs from "@/views/jobs/Jobs.vue";
 import JobDetails from "@/views/jobs/JobDetails.vue";
 import Login from "@/views/Login.vue";
+import NotFound from "@/views/NotFound.vue";
 
 const routes = [
   {
@@ -25,22 +26,24 @@ const routes = [
     path: "/jobs/:id",
     name: "jobdetails",
     component: JobDetails,
-    props: true
+    props: true,
   },
   {
     path: "/login",
     name: "login",
     component: Login,
   },
-  //redirect 
+  //redirect
   {
-    path: '/all-jobs',
-    redirect: '/jobs'
-  }
+    path: "/all-jobs",
+    redirect: "/jobs",
+  },
   // 404 page
-  // {
-  //   path: ''
-  // }
+  {
+    path: "/:catchAll(.*)",
+    name: "notfound",
+    component: NotFound,
+  },
 ];
 
 const router = createRouter({
