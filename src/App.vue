@@ -5,8 +5,31 @@
     <router-link :to="{ name: 'jobs' }">Jobs</router-link> |
     <router-link :to="{ name: 'login' }">Login</router-link>
   </nav>
+  <button @click="redirect">Redirect</button>
+  <button @click="back">Go Back</button>
+  <button @click="forward">Go Forward</button>
   <router-view />
 </template>
+<script>
+export default {
+  data() {
+    return {
+      //
+    };
+  },
+  methods: {
+    redirect() {
+      this.$router.push({ name: "home" });
+    },
+    back() {
+      this.$router.go(-1);
+    },
+    forward() {
+      this.$router.go(+1);
+    },
+  },
+};
+</script>
 
 <style>
 * {
@@ -32,5 +55,13 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 2px;
+  background: white;
+  color: black;
 }
 </style>
