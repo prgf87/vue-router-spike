@@ -1,8 +1,7 @@
 <template>
   <h1>Jobs</h1>
   <div v-for="job in jobs" :key="job.id">
-    <router-link :to="{name: 'jobdetails', params:{id:job.id}}">
-
+    <router-link :to="{ name: 'jobdetails', params: { id: job.id } }">
       <h2>{{ job.title }}</h2>
     </router-link>
   </div>
@@ -11,13 +10,16 @@
 export default {
   data() {
     return {
-      jobs: [
-        { title: "UX Designer", id: 1, details: "lorem" },
-        { title: "UI Designer", id: 2, details: "lorem" },
-        { title: "Web Designer", id: 3, details: "lorem" },
-        { title: "Web Developer", id: 4, details: "lorem" },
-      ],
+      jobs: [],
     };
+  },
+  mounted() {
+    fetch("http://localhost:3000/jobs")
+      .then((res) => res.json())
+      .then((data) => (this.jobs = data))
+      .catch((e) => {
+        console.log(e);
+      });
   },
 };
 </script>
