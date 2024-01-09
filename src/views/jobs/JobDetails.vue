@@ -1,7 +1,17 @@
 <template>
-  <div></div>
+  <h1>Job Details Page</h1>
+  <p>Jod ID: {{ id }}</p>
 </template>
+
 <script>
-export default {};
+export default {
+  data(){
+    return {
+      id: this.$route.params.id
+    }
+  }
+};
+
 </script>
+
 <style></style>
