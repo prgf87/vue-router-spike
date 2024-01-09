@@ -1,9 +1,10 @@
 <template>
   <h1>Jobs</h1>
   <div v-if="jobs.length">
+    <h1>The following data is being fetched dynamically using json-server</h1>
     <div v-for="job in jobs" :key="job.id">
       <router-link :to="{ name: 'jobdetails', params: { id: job.id } }">
-        <h2>{{ job.title }}</h2>
+        <h2 class="link">{{ job.title }}</h2>
       </router-link>
     </div>
   </div>
@@ -28,4 +29,18 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+.link {
+  width: 150px;
+  margin: 10px auto;
+  padding: 8px 16px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background: rgb(5, 26, 211);
+  color: white;
+}
+.link:hover {
+  opacity: 0.8;
+  /* border: none; */
+}
+</style>
