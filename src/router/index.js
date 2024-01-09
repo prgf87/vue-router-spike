@@ -25,6 +25,7 @@ const routes = [
     path: "/jobs/:id",
     name: "jobdetails",
     component: JobDetails,
+    props: true
   },
   {
     path: "/login",

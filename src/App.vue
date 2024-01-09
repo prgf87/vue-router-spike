@@ -9,17 +9,16 @@
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  /* display: grid; */
-}
 * {
   color: #ececec;
   background: #272727;
   font-size: 12px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  max-width: 75vw;
+  margin-inline: auto;
 }
 
 nav {
