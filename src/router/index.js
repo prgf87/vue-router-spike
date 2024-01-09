@@ -32,6 +32,15 @@ const routes = [
     name: "login",
     component: Login,
   },
+  //redirect 
+  {
+    path: '/all-jobs',
+    redirect: '/jobs'
+  }
+  // 404 page
+  // {
+  //   path: ''
+  // }
 ];
 
 const router = createRouter({
